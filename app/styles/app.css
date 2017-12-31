@@ -106,8 +106,8 @@ body, html, body > .ember-view {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
+  font-size: 48px;
+  padding: 10%;
 }
 
 .trivia__audio {
