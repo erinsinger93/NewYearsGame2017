@@ -1,0 +1,15 @@
+<div class="trivia__container">
+  <div class="trivia__overlay">
+    <div class="trivia__text">
+      {{mainText}}
+      {{#if model.audio}}
+        <div class="trivia__audio">
+          <audio controls controlsList="nodownload">
+            <source src={{model.audio}} type="audio/mp4">
+          </audio>
+        </div>
+      {{/if}}
+    </div>
+    <div class="trivia__button" {{action "doThings"}}> {{buttonText}} </div>
+  </div>
+</div>

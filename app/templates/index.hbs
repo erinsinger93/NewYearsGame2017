@@ -1,0 +1,33 @@
+<div class="trivia__categories">
+  <div class="trivia__category">
+    SONGS
+  </div>
+  <div class="trivia__category">
+    MOVIES
+  </div>
+  <div class="trivia__category">
+    POP CULTURE
+  </div>
+  <div class="trivia__category">
+    SPORTS
+  </div>
+</div>
+<div class="trivia__board">
+  {{#each model as |isVisited index|}}
+      {{#with (get trivia index) as |question|}}
+        <div class="trivia__tile {{concat "trivia__tile--" question.type}} {{if isVisited "disabled"}}">
+          {{#link-to 'questions'
+            (query-params
+              id=index
+            )
+            disabledWhen=isVisited
+            invokeAction=(action "markAsVisited" index)
+          }}
+            {{question.pointValue}}
+          {{/link-to}}
+        </div>
+      {{/with}}
+  {{/each}}
+</div>
+
+<button class="trivia__clear" {{action "clearTriviaProgress"}}> Clear </button>
